@@ -13,12 +13,12 @@ class TestCore(unittest.TestCase):
     def test_lemon(self):
         for i in range(5): #前五爻
             self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM))
-            self.assertIsNone(self.lemon.octaNopoPentaMiri)
+            self.assertIsNone(self.lemon.octaNopoPentaMiri.yyp)
         self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六爻
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.pentaMiriCode)
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.octaNopoCode)
         self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六+1爻(重置)
-        self.assertIsNone(self.lemon.octaNopoPentaMiri)
+        self.assertIsNone(self.lemon.octaNopoPentaMiri.yyp)
 
     def test_lemon_list(self):
         for i in range(6):

@@ -5,40 +5,10 @@ class Xxxv:
     def __init__(self, xxxv_code:Const.XxxvCode):
         self.xxxvCode = xxxv_code
 
-class OctaNopoPentaMiri:
-    """八宫五行：64卦归八宫五行"""
-    def __init__(self):
-        self.pentaMiriCode = None
-        self.octaNopoCode = None
-        self.yyp = None
-
-    #64卦归八宫五行
-    def assignYypToPentaMiri(self, yyp):
-        if yyp.isCompleted():
-            self.yyp = yyp
-            pass #查出该卦的所属八宫及八宫对应的五行
-            self.octaNopoCode = Const.OctaNopoCode.HEAVEN
-            self.pentaMiriCode = Const.PentaMiriCode.FIRE
-
-    #8宫五行卦转爻(进位) 6进制但每一位有64值域
-    def completedYypToXvvv(self) -> Xxxv|None:
-        if self.yyp.isCompleted():
-            pass
-            return Xxxv(Const.XxxvCode.YOUNG_BDEM)
-        else:
-            return None
-
-    #清除状态
-    def clear(self):
-        self.yyp = None
-        self.octaNopoCode = None
-        self.pentaMiriCode = None
-
 class Yyp:
     """卦：六爻成卦"""
     def __init__(self):
         self.sixXxxv = [] #六爻
-        self.onpm = OctaNopoPentaMiri()
 
     def append_xxxv(self, xxxv):
         if len(self.sixXxxv) >= 6:
@@ -48,12 +18,6 @@ class Yyp:
     def isCompleted(self):
         return True if len(self.sixXxxv) == 6 else False
 
-    def completedYypToOnpm(self) -> OctaNopoPentaMiri|None:
-        if self.isCompleted():
-            self.onpm.assignYypToPentaMiri(self)
-            return self.onpm
-        else:
-            self.onpm.clear()
-            return None
+    
         
 
