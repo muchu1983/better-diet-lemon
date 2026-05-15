@@ -1,5 +1,7 @@
 import unittest
-from penta_lemon.core import Lemon, Const, Xxxv
+from penta_lemon.const import Const
+from penta_lemon.core import Xxxv
+from penta_lemon.lemon import Lemon
 
 class TestCore(unittest.TestCase):
 
