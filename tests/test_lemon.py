@@ -17,6 +17,7 @@ class TestCore(unittest.TestCase):
         self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六爻
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.pentaMiriCode)
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.octaNopoCode)
+        self.assertIsNotNone(self.lemon.octaNopoPentaMiri.completedYypToXvvv())
         self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六+1爻(重置)
         self.assertIsNone(self.lemon.octaNopoPentaMiri.yyp)
 
