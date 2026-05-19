@@ -1,12 +1,32 @@
 import unittest
+from penta_lemon.const import XxxvCode, OctaNopoCode
+from penta_lemon.core import Xxxv
+from penta_lemon.lemon import Lemon
 
 class TestOnpm(unittest.TestCase):
 
     def setUp(self):
-        pass
+        self.lemon = Lemon()
 
     def test_onpm(self):
-        pass
+        #喂食水火既济 121212
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BAYT))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
+        self.assertEqual(self.lemon.octaNopoPentaMiri.findYypId(), "121212")
+        self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.WATER)
+        #喂食地天泰 111222
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BDEM))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BAYT))
+        self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
+        self.assertEqual(self.lemon.octaNopoPentaMiri.findYypId(), "111222")
+        self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.EARTH)
 
 if __name__ == "__main__":
     unittest.main()

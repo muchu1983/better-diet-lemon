@@ -1,5 +1,5 @@
 from penta_lemon.core import Xxxv
-from penta_lemon.const import XxxvCode, OctaNopoCode, PentaMiriCode
+from penta_lemon.const import XxxvCode, YypCode, OctaNopoCode, PentaMiriCode, YypCodeMap, PentaMiriCodeMap
 
 class OctaNopoPentaMiri:
     """八宫五行：64卦归八宫五行"""
@@ -12,9 +12,10 @@ class OctaNopoPentaMiri:
     def assignYypToPentaMiri(self, yyp):
         if yyp.isCompleted():
             self.yyp = yyp
-            pass #查出该卦的所属八宫及八宫对应的五行
-            self.octaNopoCode = OctaNopoCode.HEAVEN
-            self.pentaMiriCode = PentaMiriCode.FIRE
+            #查出该卦的所属八宫及八宫对应的五行
+            yypId = self.findYypId()
+            self.octaNopoCode = YypCodeMap[yypId].value[2]
+            self.pentaMiriCode = self.findPentaMiriCode()
         else:
             self.clear()
 
@@ -32,3 +33,23 @@ class OctaNopoPentaMiri:
         self.yyp = None
         self.octaNopoCode = None
         self.pentaMiriCode = None
+
+    #六爻阴阳 找出 卦id
+    def findYypId(self):
+        yypIdChars = []
+        for xxxv in self.yyp.sixXxxv:
+            xxxvCode = xxxv.xxxvCode
+            if xxxvCode is XxxvCode.OLD_BDEM or xxxvCode is XxxvCode.YOUNG_BDEM:
+                yypIdChars.append("1")
+            elif xxxvCode is XxxvCode.OLD_BAYT or xxxvCode is XxxvCode.YOUNG_BAYT:
+                yypIdChars.append("2")
+            else:
+                yypIdChars.append("e")
+        yypId = "".join(yypIdChars)
+        return yypId
+
+    #八宫 找出 五行
+    def findPentaMiriCode(self):
+        pentaMiriCode = PentaMiriCodeMap[self.octaNopoCode]
+        return pentaMiriCode
+

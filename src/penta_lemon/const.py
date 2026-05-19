@@ -107,3 +107,14 @@ YypCodeMap = {}
 for member in YypCode:
     if isinstance(member.value, tuple):
         YypCodeMap[member.value[0]] = member
+
+PentaMiriCodeMap = {
+    OctaNopoCode.HEAVEN: PentaMiriCode.METAL,
+    OctaNopoCode.LAKE: PentaMiriCode.METAL,
+    OctaNopoCode.FIRE: PentaMiriCode.FIRE,
+    OctaNopoCode.THUNDER: PentaMiriCode.WOOD,
+    OctaNopoCode.WIND: PentaMiriCode.WOOD,
+    OctaNopoCode.WATER: PentaMiriCode.WATER,
+    OctaNopoCode.MOUNTAIN: PentaMiriCode.EARTH,
+    OctaNopoCode.EARTH: PentaMiriCode.EARTH,
+}
