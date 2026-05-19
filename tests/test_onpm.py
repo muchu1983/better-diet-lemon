@@ -18,6 +18,7 @@ class TestOnpm(unittest.TestCase):
         self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
         self.assertEqual(self.lemon.octaNopoPentaMiri.findYypId(), "121212")
         self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.WATER)
+        self.assertEqual(self.lemon.octaNopoPentaMiri.completedYypToXvvv(), XxxvCode.YOUNG_BDEM)
         #喂食地天泰 111222
         self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
         self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
@@ -27,6 +28,7 @@ class TestOnpm(unittest.TestCase):
         self.lemon.feedXxxv(Xxxv(XxxvCode.YOUNG_BAYT))
         self.assertEqual(self.lemon.octaNopoPentaMiri.findYypId(), "111222")
         self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.EARTH)
+        self.assertEqual(self.lemon.octaNopoPentaMiri.completedYypToXvvv(), XxxvCode.OLD_BAYT)
 
 if __name__ == "__main__":
     unittest.main()

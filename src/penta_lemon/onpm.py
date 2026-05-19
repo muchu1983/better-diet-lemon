@@ -1,5 +1,13 @@
 from penta_lemon.core import Xxxv
-from penta_lemon.const import XxxvCode, YypCode, OctaNopoCode, PentaMiriCode, YypCodeMap, PentaMiriCodeMap
+from penta_lemon.const import (
+    XxxvCode,
+    YypCode,
+    OctaNopoCode,
+    PentaMiriCode,
+    YypCodeMap,
+    PentaMiriCodeMap,
+    CompletedOctaNopoToXxxvMap
+)
 
 class OctaNopoPentaMiri:
     """八宫五行：64卦归八宫五行"""
@@ -22,8 +30,7 @@ class OctaNopoPentaMiri:
     #8宫五行卦转爻(进位) 6进制但每一位有64值域
     def completedYypToXvvv(self) -> Xxxv|None:
         if self.yyp.isCompleted():
-            pass
-            return Xxxv(XxxvCode.YOUNG_BDEM)
+            return CompletedOctaNopoToXxxvMap[self.octaNopoCode]
         else:
             self.clear()
             return None

@@ -103,11 +103,13 @@ class YypCode(Enum):
     _111112 = ("111112", "澤天夬", OctaNopoCode.EARTH, XxxvCode.OLD_BAYT, 天 + 澤)
     _111111 = ("111111", "乾為天", OctaNopoCode.HEAVEN, XxxvCode.OLD_BDEM, 天 + 天)
 
+#以"111111"为KEY，YypCode为VALUE
 YypCodeMap = {}
 for member in YypCode:
     if isinstance(member.value, tuple):
         YypCodeMap[member.value[0]] = member
 
+#以OctaNopoCode为KEY，PentaMiriCode为VALUE
 PentaMiriCodeMap = {
     OctaNopoCode.HEAVEN: PentaMiriCode.METAL,
     OctaNopoCode.LAKE: PentaMiriCode.METAL,
@@ -117,4 +119,16 @@ PentaMiriCodeMap = {
     OctaNopoCode.WATER: PentaMiriCode.WATER,
     OctaNopoCode.MOUNTAIN: PentaMiriCode.EARTH,
     OctaNopoCode.EARTH: PentaMiriCode.EARTH,
+}
+
+#以OctaNopoCode为KEY，XxxvCode为VALUE
+CompletedOctaNopoToXxxvMap = {
+    OctaNopoCode.HEAVEN: XxxvCode.OLD_BDEM,
+    OctaNopoCode.THUNDER: XxxvCode.YOUNG_BDEM,
+    OctaNopoCode.WATER: XxxvCode.YOUNG_BDEM,
+    OctaNopoCode.MOUNTAIN: XxxvCode.YOUNG_BDEM,
+    OctaNopoCode.LAKE: XxxvCode.YOUNG_BAYT,
+    OctaNopoCode.FIRE: XxxvCode.YOUNG_BAYT,
+    OctaNopoCode.WIND: XxxvCode.YOUNG_BAYT,
+    OctaNopoCode.EARTH: XxxvCode.OLD_BAYT,
 }
