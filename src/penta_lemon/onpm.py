@@ -1,5 +1,5 @@
 from penta_lemon.core import Xxxv
-from penta_lemon.const import Const
+from penta_lemon.const import XxxvCode, OctaNopoCode, PentaMiriCode
 
 class OctaNopoPentaMiri:
     """八宫五行：64卦归八宫五行"""
@@ -13,8 +13,8 @@ class OctaNopoPentaMiri:
         if yyp.isCompleted():
             self.yyp = yyp
             pass #查出该卦的所属八宫及八宫对应的五行
-            self.octaNopoCode = Const.OctaNopoCode.HEAVEN
-            self.pentaMiriCode = Const.PentaMiriCode.FIRE
+            self.octaNopoCode = OctaNopoCode.HEAVEN
+            self.pentaMiriCode = PentaMiriCode.FIRE
         else:
             self.clear()
 
@@ -22,7 +22,7 @@ class OctaNopoPentaMiri:
     def completedYypToXvvv(self) -> Xxxv|None:
         if self.yyp.isCompleted():
             pass
-            return Xxxv(Const.XxxvCode.YOUNG_BDEM)
+            return Xxxv(XxxvCode.YOUNG_BDEM)
         else:
             self.clear()
             return None

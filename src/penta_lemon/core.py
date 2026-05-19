@@ -1,8 +1,8 @@
-from penta_lemon.const import Const
+from penta_lemon.const import XxxvCode
 """核心类"""
 class Xxxv:
     """爻：万物分阴阳"""
-    def __init__(self, xxxv_code:Const.XxxvCode):
+    def __init__(self, xxxv_code:XxxvCode):
         self.xxxvCode = xxxv_code
 
 class Yyp:

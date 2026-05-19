@@ -1,9 +1,9 @@
 import unittest
-from penta_lemon.const import Const
+from penta_lemon.const import XxxvCode
 from penta_lemon.core import Xxxv
 from penta_lemon.lemon import Lemon
 
-class TestCore(unittest.TestCase):
+class TestLemon(unittest.TestCase):
 
     def setUp(self):
         self.lemon = Lemon()
@@ -12,18 +12,18 @@ class TestCore(unittest.TestCase):
 
     def test_lemon(self):
         for i in range(5): #前五爻
-            self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM))
+            self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
             self.assertIsNone(self.lemon.octaNopoPentaMiri.yyp)
-        self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六爻
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM)) #第六爻
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.pentaMiriCode)
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.octaNopoCode)
         self.assertIsNotNone(self.lemon.octaNopoPentaMiri.completedYypToXvvv())
-        self.lemon.feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM)) #第六+1爻(重置)
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BDEM)) #第六+1爻(重置)
         self.assertIsNone(self.lemon.octaNopoPentaMiri.yyp)
 
     def test_lemon_list(self):
         for i in range(6):
-            self.lemon_list[0].feedXxxv(Xxxv(Const.XxxvCode.OLD_BDEM))
+            self.lemon_list[0].feedXxxv(Xxxv(XxxvCode.OLD_BDEM))
         self.assertIsNotNone(self.lemon_list[0].octaNopoPentaMiri.pentaMiriCode)
         self.assertIsNotNone(self.lemon_list[0].octaNopoPentaMiri.octaNopoCode)
         self.lemon_list.append(Lemon())
