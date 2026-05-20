@@ -1,5 +1,5 @@
 import unittest
-from penta_lemon.const import XxxvCode
+from penta_lemon.const import XxxvCode, OctaNopoCode
 from penta_lemon.core import Xxxv
 from penta_lemon.lemon import Lemon
 
@@ -29,6 +29,15 @@ class TestLemon(unittest.TestCase):
         self.lemon_list.append(Lemon())
         self.lemon_list[1].feedXxxv(self.lemon_list[0].octaNopoPentaMiri.completedYypToXvvv())
         self.assertIsNotNone(self.lemon_list[1].yyp.sixXxxv[0])
+
+    def test_getCarryXxxv(self):
+        for i in range(5):
+            self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BAYT))
+            self.assertIsNone(self.lemon.getCarryXxxv())
+        self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BAYT))
+        self.assertIsNotNone(self.lemon.getCarryXxxv())
+        self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.EARTH)
+        self.assertEqual(self.lemon.getCarryXxxv(), XxxvCode.OLD_BAYT)
 
 if __name__ == "__main__":
     unittest.main()

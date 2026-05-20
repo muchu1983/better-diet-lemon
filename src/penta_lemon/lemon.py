@@ -10,5 +10,9 @@ class Lemon:
     def feedXxxv(self, xxxv):
         self.yyp.append_xxxv(xxxv)
         self.octaNopoPentaMiri.assignYypToPentaMiri(self.yyp)
+
+    def getCarryXxxv(self):
         if self.yyp.isCompleted():
-            self.octaNopoPentaMiri.completedYypToXvvv()
+            return self.octaNopoPentaMiri.completedYypToXvvv()
+        else:
+            return None
