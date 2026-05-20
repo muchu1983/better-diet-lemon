@@ -13,6 +13,7 @@ class MyWidget(QtWidgets.QWidget):
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.updateText)
         self.layout = QtWidgets.QVBoxLayout(self)
+        self.textLemonStatus = QtWidgets.QLabel("灵萌状态", alignment=QtCore.Qt.AlignCenter)
         self.text6 = QtWidgets.QLabel("上爻", alignment=QtCore.Qt.AlignCenter)
         self.text5 = QtWidgets.QLabel("五爻", alignment=QtCore.Qt.AlignCenter)
         self.text4 = QtWidgets.QLabel("四爻", alignment=QtCore.Qt.AlignCenter)
@@ -20,17 +21,20 @@ class MyWidget(QtWidgets.QWidget):
         self.text2 = QtWidgets.QLabel("二爻", alignment=QtCore.Qt.AlignCenter)
         self.text1 = QtWidgets.QLabel("初爻", alignment=QtCore.Qt.AlignCenter)
         self.textList = [self.text1, self.text2, self.text3, self.text4, self.text5, self.text6]
+        self.layout.addWidget(self.textLemonStatus)
         self.layout.addWidget(self.text6)
         self.layout.addWidget(self.text5)
         self.layout.addWidget(self.text4)
         self.layout.addWidget(self.text3)
         self.layout.addWidget(self.text2)
         self.layout.addWidget(self.text1)
-        self.timer.start(500)
+        self.timer.start(300)
 
     @QtCore.Slot()
     def updateText(self):
         self.lemon.feedXxxv(self.timeDrivenXxxvGen.getXxxv())
+        lemonStatus = str(self.lemon.octaNopoPentaMiri.octaNopoCode) + "," + str(self.lemon.octaNopoPentaMiri.pentaMiriCode)
+        self.textLemonStatus.setText(lemonStatus)
         textIndex = 0
         for xxxv in self.lemon.yyp.sixXxxv:
             xxxvCode = xxxv.xxxvCode
@@ -52,7 +56,7 @@ class MyWidget(QtWidgets.QWidget):
 def main():
     app = QtWidgets.QApplication([])
     widget = MyWidget()
-    widget.resize(200, 50)
+    widget.resize(400, 50)
     widget.show()
     sys.exit(app.exec())
 
