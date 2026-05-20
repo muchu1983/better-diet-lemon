@@ -1,14 +1,14 @@
 import unittest
-from penta_lemon.lemon import Lemon
-from penta_lemon.xxxv_generator.time_driven import *
+from penta_lemon.core import Xxxv
+from penta_lemon.xxxv_generator.time_driven import TimeDrivenXxxvGen
 
-class TestOnpm(unittest.TestCase):
+class TestTimeDrivenXxxvGen(unittest.TestCase):
 
     def setUp(self):
-        self.lemon = Lemon()
+        self.tdxg = TimeDrivenXxxvGen()
 
     def test_time_driven_xxxv_generator(self):
-        pass
+        self.assertIsInstance(self.tdxg.getXxxv(), Xxxv)
 
 
 if __name__ == "__main__":
