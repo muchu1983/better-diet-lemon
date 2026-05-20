@@ -18,6 +18,19 @@ class Yyp:
     def isCompleted(self):
         return True if len(self.sixXxxv) == 6 else False
 
+    def getYypId(self) -> str:
+        yypIdChars = []
+        for xxxv in self.sixXxxv:
+            xxxvCode = xxxv.xxxvCode
+            if xxxvCode is XxxvCode.OLD_BDEM or xxxvCode is XxxvCode.YOUNG_BDEM:
+                yypIdChars.append("1")
+            elif xxxvCode is XxxvCode.OLD_BAYT or xxxvCode is XxxvCode.YOUNG_BAYT:
+                yypIdChars.append("2")
+            else:
+                yypIdChars.append("e")
+        yypId = "".join(yypIdChars)
+        return yypId
+
     
         
 
