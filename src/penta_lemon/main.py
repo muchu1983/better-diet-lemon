@@ -11,7 +11,7 @@ def main():
     timeDrivenXxxvGen = TimeDrivenXxxvGen()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda:widget0.updateText(food=timeDrivenXxxvGen.getXxxv()))
-    timer.start(1000)
+    timer.start(300)
     #第1位元widget
     widget1 = LemonWidget()
     widget0.singalToNextLemonWidget.connect(lambda:widget1.updateText(food=widget0.lemon.getCarryXxxv()))

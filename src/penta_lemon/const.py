@@ -132,3 +132,24 @@ CompletedOctaNopoToXxxvMap = {
     OctaNopoCode.WIND: XxxvCode.YOUNG_BAYT,
     OctaNopoCode.EARTH: XxxvCode.OLD_BAYT,
 }
+
+#阴阳、八宫、五行的emoji
+EmojiMap = {
+    XxxvCode.OLD_BDEM: "\u268A" + "老陽",
+    XxxvCode.OLD_BAYT: "\u268B" + "老陰",
+    XxxvCode.YOUNG_BDEM: "\u268A" + "少陽",
+    XxxvCode.YOUNG_BAYT: "\u268B" + "少陰",
+    OctaNopoCode.HEAVEN: "\U0001F31E" + "乾宮",
+    OctaNopoCode.LAKE: "\u26F2" + "兌宮",
+    OctaNopoCode.FIRE: "\U0001F4A5" + "離宮",
+    OctaNopoCode.THUNDER: "\u26A1" + "震宮",
+    OctaNopoCode.WIND: "\U0001F4A8" + "巽宮",
+    OctaNopoCode.WATER: "\U0001F4A6" + "坎宮",
+    OctaNopoCode.MOUNTAIN: "\U0001F6D8" + "艮宮",
+    OctaNopoCode.EARTH: "\U0001F30F" + "坤宮",
+    PentaMiriCode.METAL: "\U0001FA99" + "金行",
+    PentaMiriCode.WOOD: "\U0001F333" + "木行",
+    PentaMiriCode.WATER: "\U0001F4A7" + "水行",
+    PentaMiriCode.FIRE: "\U0001F525" + "火行",
+    PentaMiriCode.EARTH: "\U0001FAA8" + "土行"
+}

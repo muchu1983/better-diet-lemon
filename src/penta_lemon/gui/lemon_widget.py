@@ -3,7 +3,7 @@ import random
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Qt, Slot, Signal
 from penta_lemon.lemon import Lemon
-from penta_lemon.const import XxxvCode
+from penta_lemon.const import XxxvCode, YypCodeMap, EmojiMap
 
 class LemonWidget(QtWidgets.QWidget):
     singalToNextLemonWidget = Signal()
@@ -34,8 +34,13 @@ class LemonWidget(QtWidgets.QWidget):
         if self.lemon.yyp.isCompleted(): #进位
             self.singalToNextLemonWidget.emit()
         #更新text
-        lemonStatus = str(self.lemon.octaNopoPentaMiri.octaNopoCode) + "," + str(self.lemon.octaNopoPentaMiri.pentaMiriCode)
-        self.textLemonStatus.setText(lemonStatus)
+        if self.lemon.octaNopoPentaMiri.octaNopoCode and self.lemon.octaNopoPentaMiri.pentaMiriCode:
+            lemonStatus = ",".join([
+                YypCodeMap[self.lemon.yyp.getYypId()].value[1],
+                EmojiMap[self.lemon.octaNopoPentaMiri.octaNopoCode],
+                EmojiMap[self.lemon.octaNopoPentaMiri.pentaMiriCode]
+            ])
+            self.textLemonStatus.setText(lemonStatus)
         textIndex = 0
         for xxxv in self.lemon.yyp.sixXxxv:
             xxxvCode = xxxv.xxxvCode
@@ -46,11 +51,7 @@ class LemonWidget(QtWidgets.QWidget):
                 self.text4.setText("四爻")
                 self.text5.setText("五爻")
                 self.text6.setText("上爻")
-            if xxxvCode is XxxvCode.OLD_BDEM or xxxvCode is XxxvCode.YOUNG_BDEM:
-                self.textList[textIndex].setText("⚊" + xxxvCode.name)
-            elif xxxvCode is XxxvCode.OLD_BAYT or xxxvCode is XxxvCode.YOUNG_BAYT:
-                self.textList[textIndex].setText("⚋" + xxxvCode.name)
-            else:
-                self.textList[textIndex].setText("error")
+            
+            self.textList[textIndex].setText(EmojiMap[xxxvCode])
             textIndex += 1
 

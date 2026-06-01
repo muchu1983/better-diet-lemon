@@ -1,6 +1,6 @@
 import unittest
 import random
-from penta_lemon.const import YypCode, YypCodeMap
+from penta_lemon.const import YypCode, YypCodeMap, EmojiMap
 
 class TestConst(unittest.TestCase):
 
@@ -20,5 +20,10 @@ class TestConst(unittest.TestCase):
         self.assertIsNotNone(YypCodeMap[yyp_code_key].value[3])
         self.assertIsNotNone(YypCodeMap[yyp_code_key].value[4])
         
+    def testEmojiMap(self):
+        for key in EmojiMap:
+            pass
+            #print(EmojiMap[key])
+
 if __name__ == "__main__":
     unittest.main()
