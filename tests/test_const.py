@@ -22,7 +22,7 @@ class TestConst(unittest.TestCase):
         
     def testEmojiMap(self):
         for key in EmojiMap:
-            pass
+            self.assertNotEqual(EmojiMap[key], "")
             #print(EmojiMap[key])
 
 if __name__ == "__main__":
