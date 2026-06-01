@@ -37,7 +37,7 @@ class TestLemon(unittest.TestCase):
         self.lemon.feedXxxv(Xxxv(XxxvCode.OLD_BAYT))
         self.assertIsNotNone(self.lemon.getCarryXxxv())
         self.assertEqual(self.lemon.octaNopoPentaMiri.octaNopoCode, OctaNopoCode.EARTH)
-        self.assertEqual(self.lemon.getCarryXxxv(), XxxvCode.OLD_BAYT)
+        self.assertEqual(self.lemon.getCarryXxxv().xxxvCode, XxxvCode.OLD_BAYT)
 
 if __name__ == "__main__":
     unittest.main()

@@ -30,7 +30,8 @@ class OctaNopoPentaMiri:
     #8宫五行卦转爻(进位) 6进制但每一位有64值域
     def completedYypToXvvv(self) -> Xxxv|None:
         if self.yyp.isCompleted():
-            return CompletedOctaNopoToXxxvMap[self.octaNopoCode]
+            xxxv = Xxxv(CompletedOctaNopoToXxxvMap[self.octaNopoCode])
+            return xxxv
         else:
             self.clear()
             return None
