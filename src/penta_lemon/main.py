@@ -11,7 +11,7 @@ def main():
     timeDrivenXxxvGen = TimeDrivenXxxvGen()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda:widget0.updateText(food=timeDrivenXxxvGen.getXxxv()))
-    timer.start(300)
+    timer.start(30)
     #第1位元widget
     widget1 = LemonWidget()
     widget0.singalToNextLemonWidget.connect(lambda:widget1.updateText(food=widget0.lemon.getCarryXxxv()))
@@ -20,7 +20,7 @@ def main():
     widget1.singalToNextLemonWidget.connect(lambda:widget2.updateText(food=widget1.lemon.getCarryXxxv()))
     #main window
     mainWin = QtWidgets.QWidget()
-    mainWin.resize(1200, 50)
+    mainWin.resize(600, 300)
     layout = QtWidgets.QHBoxLayout(mainWin)
     layout.addWidget(widget0)
     layout.addWidget(widget1)

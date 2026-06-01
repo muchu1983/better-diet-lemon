@@ -51,7 +51,6 @@ class LemonWidget(QtWidgets.QWidget):
                 self.text4.setText("四爻")
                 self.text5.setText("五爻")
                 self.text6.setText("上爻")
-            
             self.textList[textIndex].setText(EmojiMap[xxxvCode])
             textIndex += 1
 
