@@ -1,6 +1,6 @@
 import unittest
-from penta_lemon.core import Xxxv
-from penta_lemon.xxxv_generator.time_driven import TimeDrivenXxxvGen
+from lemon64.core import Xxxv
+from lemon64.xxxv_generator.time_driven import TimeDrivenXxxvGen
 
 class TestTimeDrivenXxxvGen(unittest.TestCase):
 

@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui
-from penta_lemon.xxxv_generator.time_driven import TimeDrivenXxxvGen
-from penta_lemon.gui.lemon_widget import LemonWidget
+from lemon64.xxxv_generator.time_driven import TimeDrivenXxxvGen
+from lemon64.gui.lemon_widget import LemonWidget
 
 def main():
     app = QtWidgets.QApplication([])

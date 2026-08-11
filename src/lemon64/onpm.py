@@ -1,5 +1,5 @@
-from penta_lemon.core import Xxxv
-from penta_lemon.const import (
+from lemon64.core import Xxxv
+from lemon64.const import (
     XxxvCode,
     YypCode,
     OctaNopoCode,

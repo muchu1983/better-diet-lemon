@@ -1,7 +1,7 @@
 import time
 import random
-from penta_lemon.const import XxxvCode
-from penta_lemon.core import Xxxv
+from lemon64.const import XxxvCode
+from lemon64.core import Xxxv
 
 class TimeDrivenXxxvGen:
 
