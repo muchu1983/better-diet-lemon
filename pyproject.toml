@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lemon64"
-version = "2026.03.14.0"
+version = "2026.08.11.0"
 requires-python = ">=3.13"
 authors = [
 	{ name="Mu Chu Hsu"}, 
 	{email="muchu1983@gmail.com" },
 	{email="muchu1983@outlook.com" }]
-description = "膳易灵萌"
+description = "易学人格学"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 
 [project.scripts]
-penta-lemon = "lemon64.main:main"
+lemon64 = "lemon64.main:main"
