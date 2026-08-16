@@ -7,13 +7,18 @@ name = "lemon64"
 version = "2026.08.11.0"
 requires-python = ">=3.13"
 authors = [
-	{ name="Mu Chu Hsu"}, 
+	{name="Mu Chu Hsu"}, 
 	{email="muchu1983@gmail.com" },
 	{email="muchu1983@outlook.com" }]
 description = "易学人格学"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
+dependencies = [
+    "build>=1.5.0",
+    "pyinstaller>=6.22.1",
+    "pyside6>=6.11.1",
+]
 
 [project.scripts]
 lemon64 = "lemon64.main:main"
