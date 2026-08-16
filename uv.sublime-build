@@ -2,7 +2,7 @@
 //此設定檔生效位置：/home/muchu1983/.config/sublime-text/Packages/User
 {
     "working_dir": "$project_path",
-    "cmd": ["pipenv" ,"run" ,"python" ,"$file"],
+    "cmd": ["/home/muchu1983/.local/bin/uv" ,"run" ,"python" ,"$file"],
     "selector": "source.python",
     "file_regex": "^\\s*File \"(...*?)\", line ([0-9]*)",
     "env": {
