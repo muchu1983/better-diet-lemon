@@ -6,5 +6,5 @@ class Hello(App):
 		yield Label("Hello lemon64")
 
 if __name__ == "__main__":
-	app = Hello(css_path="./main_app.css", watch_css=True)
+	app = Hello(css_path="./main_app.tcss", watch_css=True)
 	app.run()
