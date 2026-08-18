@@ -23,3 +23,8 @@ dependencies = [
 
 [project.scripts]
 lemon64 = "lemon64.main:main"
+
+[dependency-groups]
+dev = [
+    "textual-dev>=1.8.0",
+]
