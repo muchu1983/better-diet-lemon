@@ -1,21 +1,24 @@
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal, Vertical
+from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
 from textual.widgets import Header, Footer, Static, Label, Button, Input
+from textual.reactive import reactive
 
-class Hello(App):
+class HelloApp(App):
+	BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
 	def compose(self) -> ComposeResult:
 		yield Header()
+		yield Footer()
 		with Vertical():
 			yield Static("柠檬64 App", id="result")
 			with Horizontal():
 				yield Label("Hello lemon64")
 				yield Button("按我", id="btn")
-			yield Input(placeholder="输入名字", id="name")
-			with Horizontal():
-				yield Button("确定", id="btn-name")
-				yield Button("清除", id="btn-clear")
-		yield Footer()
-
+			yield HorizontalScroll(
+				Input(placeholder="输入名字", id="name"),
+				Button("确定", id="btn-name"),
+				Button("清除", id="btn-clear")
+			)
+		
 	def on_button_pressed(self, event:Button.Pressed):
 		name_input = self.query_one("#name", Input)
 		result_static = self.query_one("#result", Static)
@@ -28,6 +31,10 @@ class Hello(App):
 			self.notify("清除")
 			result_static.update("柠檬64 App")
 
+	def action_toggle_dark(self) -> None:
+		"""An action to toggle dark mode."""
+		self.theme = ("textual-dark" if self.theme == "textual-light" else "textual-light")
+
 if __name__ == "__main__":
-	app = Hello(css_path="./hello_app.tcss", watch_css=True)
+	app = HelloApp(css_path="./hello_app.tcss", watch_css=True)
 	app.run()
