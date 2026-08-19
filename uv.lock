@@ -266,7 +266,7 @@ wheels = [
 
 [[package]]
 name = "lemon64"
-version = "2026.8.11.0"
+version = "2026.8.18.0"
 source = { editable = "." }
 dependencies = [
     { name = "build" },

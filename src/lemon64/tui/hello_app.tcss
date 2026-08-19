@@ -3,3 +3,7 @@ Screen{
 	background: blue;
 	color: red;
 }
+
+#name{
+	width: 50%;
+}

@@ -1,10 +1,22 @@
 from textual.app import App, ComposeResult
+from textual.screen import Screen
 from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
 from textual.widgets import Header, Footer, Static, Label, Button, Input
 from textual.reactive import reactive
 
+
+class BSOD(Screen):
+    BINDINGS = [("escape", "app.pop_screen", "Pop screen")]
+
+    def compose(self) -> ComposeResult:
+        yield Static(" Windows ", id="title")
+        yield Static("ERROR_TEXT")
+        yield Static("Press any key to continue [blink]_[/]", id="any-key")
+
 class HelloApp(App):
-	BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
+	BINDINGS = [("d", "toggle_dark", "Toggle dark mode"),
+				("b", "push_screen('bsod')", "BSOD")]
+	SCREENS = {"bsod": BSOD}
 	def compose(self) -> ComposeResult:
 		yield Header()
 		yield Footer()
