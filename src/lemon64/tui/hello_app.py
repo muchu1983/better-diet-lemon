@@ -6,17 +6,16 @@ from textual.reactive import reactive
 
 
 class BSOD(Screen):
-    BINDINGS = [("escape", "app.pop_screen", "Pop screen")]
-
+    
     def compose(self) -> ComposeResult:
-        yield Static(" Windows ", id="title")
-        yield Static("ERROR_TEXT")
-        yield Static("Press any key to continue [blink]_[/]", id="any-key")
+    	yield Header()
+    	yield Footer()
+    	yield Static(" Windows ", id="title")
+    	yield Static("ERROR_TEXT")
+    	yield Static("Press any key to continue [blink]_[/]", id="any-key")
 
-class HelloApp(App):
-	BINDINGS = [("d", "toggle_dark", "Toggle dark mode"),
-				("b", "push_screen('bsod')", "BSOD")]
-	SCREENS = {"bsod": BSOD}
+class MainScreen(Screen):
+
 	def compose(self) -> ComposeResult:
 		yield Header()
 		yield Footer()
@@ -43,10 +42,22 @@ class HelloApp(App):
 			self.notify("清除")
 			result_static.update("柠檬64 App")
 
+	
+
+class HelloApp(App):
+	BINDINGS = [("d", "toggle_dark", "Toggle dark mode"),
+				("m", "switch_mode('main')", "main screen"),
+				("w", "switch_mode('winerr')", "win error screen")]
+	MODES = {"main": MainScreen, "winerr": BSOD}
+
+	def on_mount(self):
+		self.theme = "rose-pine-moon"
+		self.switch_mode("main")
+
 	def action_toggle_dark(self) -> None:
 		"""An action to toggle dark mode."""
 		self.theme = ("textual-dark" if self.theme == "textual-light" else "textual-light")
-
+	
 if __name__ == "__main__":
 	app = HelloApp(css_path="./hello_app.tcss", watch_css=True)
 	app.run()
