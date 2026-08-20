@@ -1,0 +1,11 @@
+Screen{
+	align: center middle;
+	background: blue;
+	color: red;
+}
+#my-static{
+	align: center middle;
+	background: yellow;
+	color: red;
+	width: 50%;
+}
