@@ -3,22 +3,8 @@ from textual.screen import Screen
 from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
 from textual.widgets import Header, Footer, Static, Label, Button, Input
 from textual.reactive import reactive
-
-class ListScreen(Screen):
-	TITLE = "lemon64"
-	SUB_TITLE = "list"
-	def compose(self) -> ComposeResult:
-		yield Header()
-		yield Footer()
-		yield Static("柠檬64 列表", id="my-static")
-
-class MapScreen(Screen):
-	TITLE = "lemon64"
-	SUB_TITLE = "map"
-	def compose(self) -> ComposeResult:
-		yield Header()
-		yield Footer()
-		yield Static("柠檬64 地图", id="my-static")
+from lemon64.tui.list_screen import ListScreen
+from lemon64.tui.map_screen import MapScreen
 
 class MainApp(App):
 	CSS_PATH = "main_app.tcss"
