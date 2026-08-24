@@ -16,6 +16,22 @@ VerticalScroll.right-panel{
 	width: 3fr;
 }
 
+PersonStatic#myself{
+	layout: horizontal;
+	background: blue;
+	height: 3;
+	border: solid red;
+}
+
+Button#publish-to-map{
+	padding: 0;
+	margin: 0;
+	border: none;
+	min-height: 1;
+	min-width: 2;
+	color: blue;
+}
+
 Static.left-panel{
 	background: green;
 	width: 1fr;
