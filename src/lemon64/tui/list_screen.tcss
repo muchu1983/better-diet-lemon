@@ -1,7 +1,7 @@
 Screen.list-screen{
 	align: center middle;
 	background: cyan;
-	color: red;
+	color: skyblue;
 }
 
 Horizontal{
@@ -18,25 +18,26 @@ VerticalScroll.right-panel{
 
 PersonStatic#myself{
 	layout: horizontal;
-	background: blue;
+	background: mediumpurple;
 	height: 3;
 	border: solid red;
 }
 
-Button#publish-to-map{
+PersonStatic.someone{
+	layout: horizontal;
+	background: green;
+	height: 3;
+	border: solid red;
+}
+
+Button.publish-to-map{
 	padding: 0;
 	margin: 0;
 	border: none;
 	min-height: 1;
 	min-width: 2;
+	background: yellow;
 	color: blue;
-}
-
-Static.left-panel{
-	background: green;
-	width: 1fr;
-	height: 3;
-	border: solid red;
 }
 
 Static.right-panel{

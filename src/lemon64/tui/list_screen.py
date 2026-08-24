@@ -12,7 +12,7 @@ class PersonStatic(Static):
 	def compose(self) -> ComposeResult:
 		yield Label(self.person_name)
 		yield Label("人格")
-		yield Button("发布", variant="primary", id="publish-to-map")
+		yield Button("发布", variant="primary", classes="publish-to-map")
 
 class ListScreen(Screen):
 	TITLE = "lemon64"
@@ -27,11 +27,11 @@ class ListScreen(Screen):
 				VerticalScroll(
 					PersonStatic("本人", id="myself"),
 					Rule.horizontal(),
-					Static("他人1", classes="left-panel"),
-					Static("他人2", classes="left-panel"),
-					Static("他人3", classes="left-panel"),
-					Static("他人4", classes="left-panel"),
-					Static("他人5", classes="left-panel"),
+					PersonStatic("他人1", classes="someone"),
+					PersonStatic("他人2", classes="someone"),
+					PersonStatic("他人3", classes="someone"),
+					PersonStatic("他人4", classes="someone"),
+					PersonStatic("他人5", classes="someone"),
 					classes="left-panel"
 				),
 				Rule.vertical(),
