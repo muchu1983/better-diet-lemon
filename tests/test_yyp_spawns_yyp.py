@@ -1,5 +1,5 @@
 import unittest
-from lemon64.main import main
+from lemon64.yyp_spawns_yyp import main
 
 class TestMain(unittest.TestCase):
 

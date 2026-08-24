@@ -15,6 +15,3 @@ class MainApp(App):
 	def on_mount(self):
 		self.switch_mode("list")
 
-if __name__ == "__main__":
-	app = MainApp(watch_css=True)
-	app.run()
