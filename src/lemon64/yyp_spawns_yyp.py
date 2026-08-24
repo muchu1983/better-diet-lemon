@@ -3,7 +3,7 @@ from PySide6 import QtCore, QtWidgets, QtGui
 from lemon64.xxxv_generator.time_driven import TimeDrivenXxxvGen
 from lemon64.gui.lemon_widget import LemonWidget
 
-def main():
+def run_yyp_spawns_yyp():
     app = QtWidgets.QApplication([])
 
     #第0位元widget
@@ -27,6 +27,3 @@ def main():
     layout.addWidget(widget2)
     mainWin.show()
     sys.exit(app.exec())
-
-if __name__ == "__main__":
-    main()
