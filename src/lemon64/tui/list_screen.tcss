@@ -1,0 +1,19 @@
+Screen.list-screen{
+	align: center middle;
+	background: cyan;
+	color: red;
+}
+
+Horizontal{
+	background: transparent;
+}
+
+Static.left-panel{
+	background: green;
+	width: 1fr;
+}
+
+Static.right-panel{
+	background: yellow;
+	width: 3fr;
+}

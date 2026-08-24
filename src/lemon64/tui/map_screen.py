@@ -7,7 +7,9 @@ from textual.reactive import reactive
 class MapScreen(Screen):
 	TITLE = "lemon64"
 	SUB_TITLE = "map"
+	CSS_PATH = "map_screen.tcss"
 	def compose(self) -> ComposeResult:
+		self.add_class("map-screen")
 		yield Header()
 		yield Footer()
 		yield Static("柠檬64 地图", id="my-static")

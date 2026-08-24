@@ -1,0 +1,5 @@
+Screen.map-screen{
+	align: center middle;
+	background: yellow;
+	color: green;
+}
