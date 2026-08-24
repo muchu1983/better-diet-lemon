@@ -15,12 +15,24 @@ class ListScreen(Screen):
 		with Horizontal():
 			yield HorizontalScroll(
 				VerticalScroll(
-					Static("柠檬64 列表 左面板1", classes="left-panel"),
-					Static("柠檬64 列表 左面板2", classes="left-panel"),
-					Static("柠檬64 列表 左面板3", classes="left-panel"),
-					Static("柠檬64 列表 左面板4", classes="left-panel"),
-					Static("柠檬64 列表 左面板5", classes="left-panel"),
+					Static("本人", classes="left-panel"),
+					Rule.horizontal(),
+					Static("他人1", classes="left-panel"),
+					Static("他人2", classes="left-panel"),
+					Static("他人3", classes="left-panel"),
+					Static("他人4", classes="left-panel"),
+					Static("他人5", classes="left-panel"),
+					classes="left-panel"
 				),
 				Rule.vertical(),
-				Static("柠檬64 列表 右面板", classes="right-panel")
+				VerticalScroll(
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					Static("柠檬64 列表 右面板", classes="right-panel"),
+					classes="right-panel"
+				)
 			)

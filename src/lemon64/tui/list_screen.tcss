@@ -8,12 +8,22 @@ Horizontal{
 	background: transparent;
 }
 
+VerticalScroll.left-panel{
+	width: 1fr;
+}
+
+VerticalScroll.right-panel{
+	width: 3fr;
+}
+
 Static.left-panel{
 	background: green;
 	width: 1fr;
+	height: 3;
+	border: solid red;
 }
 
 Static.right-panel{
 	background: yellow;
-	width: 3fr;
+	width: 1fr;
 }
