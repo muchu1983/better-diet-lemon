@@ -4,6 +4,7 @@ from textual.screen import Screen
 from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
 from textual.widgets import Header, Footer, Static, Label, Button, Input, Rule, Switch
 from textual.reactive import reactive
+from lemon64.tui.messages import PersonStaticClicked
 
 class PersonStatic(Static):
 	def __init__(self, text:str, **kwargs):
@@ -15,8 +16,7 @@ class PersonStatic(Static):
 		yield Label("人格")
 
 	def on_click(self, event:events.Click):
-		persno_name_label = self.screen.query_one("#person-name-label", Label)
-		persno_name_label.update(self.person_name)
+		self.post_message(PersonStaticClicked(self.person_name))
 		self.notify(f"{self.person_name} on click")
 
 class XxxvStatic(Static):
@@ -67,3 +67,7 @@ class ListScreen(Screen):
 					classes="right-panel"
 				)
 			)
+			
+	def on_person_static_clicked(self, msg: PersonStaticClicked):
+		persno_name_label = self.query_one("#person-name-label", Label)
+		persno_name_label.update(msg.person_name)
