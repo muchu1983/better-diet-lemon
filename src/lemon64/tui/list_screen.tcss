@@ -8,12 +8,17 @@ Horizontal{
 	background: transparent;
 }
 
+Label{
+	text-align: center;
+}
+
 VerticalScroll.left-panel{
 	width: 1fr;
 }
 
 VerticalScroll.right-panel{
 	width: 3fr;
+	align: center middle;
 }
 
 PersonStatic#myself{
@@ -40,7 +45,49 @@ Button.publish-to-map{
 	color: blue;
 }
 
-Static.right-panel{
-	background: yellow;
+XxxvStatic.xxxv-static{
+	align: center middle;
+	background: yellowgreen;
+	color: black;
+	width: 90%;
+	height: 4;
+}
+
+Label.bdem-xxxv-text{
 	width: 1fr;
+	background: orange;
+}
+
+Label.bdem-xxxv-symbol{
+	width: 1fr;
+	background: gold;
+}
+
+Label.bayt-xxxv-text{
+	width: 1fr;
+	background: orange;
+}
+
+Label.bayt-xxxv-symbol{
+	width: 1fr;
+	background: gold;
+}
+
+Vertical.xxxv-switch-panel{
+	align: center top;
+	width: 1fr;
+	background: green;
+}
+
+Label.xxxv-switch-label{
+	width: 1fr;
+	background: lightblue;
+}
+
+Switch.xxxv-switch{
+	padding: 0;
+	margin: 0;
+	border: none;
+	height: 1;
+	width: 5;
 }

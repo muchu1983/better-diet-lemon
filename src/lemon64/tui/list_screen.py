@@ -1,7 +1,7 @@
 from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
-from textual.widgets import Header, Footer, Static, Label, Button, Input, Rule
+from textual.widgets import Header, Footer, Static, Label, Button, Input, Rule, Switch
 from textual.reactive import reactive
 
 class PersonStatic(Static):
@@ -13,6 +13,21 @@ class PersonStatic(Static):
 		yield Label(self.person_name)
 		yield Label("人格")
 		yield Button("发布", variant="primary", classes="publish-to-map")
+
+class XxxvStatic(Static):
+	def __init__(self, text:str, **kwargs):
+		super().__init__(**kwargs)
+		self.xxxv_name = text
+
+	def compose(self) -> ComposeResult:
+		with Horizontal():
+			yield Label("阳爻", classes="bdem-xxxv-text")
+			yield Label("-", classes="bdem-xxxv-symbol")
+			with Vertical(classes="xxxv-switch-panel"):
+				yield Label(self.xxxv_name, classes="xxxv-switch-label")
+				yield Switch(classes="xxxv-switch")
+			yield Label("阴爻", classes="bayt-xxxv-text")
+			yield Label("--", classes="bayt-xxxv-symbol")
 
 class ListScreen(Screen):
 	TITLE = "lemon64"
@@ -36,13 +51,12 @@ class ListScreen(Screen):
 				),
 				Rule.vertical(),
 				VerticalScroll(
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
-					Static("柠檬64 列表 右面板", classes="right-panel"),
+					XxxvStatic("上爻", classes="xxxv-static"),
+					XxxvStatic("五爻", classes="xxxv-static"),
+					XxxvStatic("四爻", classes="xxxv-static"),
+					XxxvStatic("三爻", classes="xxxv-static"),
+					XxxvStatic("二爻", classes="xxxv-static"),
+					XxxvStatic("初爻", classes="xxxv-static"),
 					classes="right-panel"
 				)
 			)
