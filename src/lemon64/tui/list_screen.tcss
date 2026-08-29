@@ -45,12 +45,17 @@ Button.publish-to-map{
 	color: blue;
 }
 
+Label#person-name-label{
+	background: lightsalmon;
+	width: 90%;
+}
+
 XxxvStatic.xxxv-static{
 	align: center middle;
 	background: yellowgreen;
 	color: black;
 	width: 90%;
-	height: 4;
+	height: 2;
 }
 
 Label.bdem-xxxv-text{

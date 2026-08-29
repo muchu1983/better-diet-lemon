@@ -1,3 +1,4 @@
+from textual import events
 from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
@@ -12,7 +13,11 @@ class PersonStatic(Static):
 	def compose(self) -> ComposeResult:
 		yield Label(self.person_name)
 		yield Label("人格")
-		yield Button("发布", variant="primary", classes="publish-to-map")
+
+	def on_click(self, event:events.Click):
+		persno_name_label = self.screen.query_one("#person-name-label", Label)
+		persno_name_label.update(self.person_name)
+		self.notify(f"{self.person_name} on click")
 
 class XxxvStatic(Static):
 	def __init__(self, text:str, **kwargs):
@@ -40,7 +45,7 @@ class ListScreen(Screen):
 		with Horizontal():
 			yield HorizontalScroll(
 				VerticalScroll(
-					PersonStatic("本人", id="myself"),
+					PersonStatic("本人", id="myself", classes="someone"),
 					Rule.horizontal(),
 					PersonStatic("他人1", classes="someone"),
 					PersonStatic("他人2", classes="someone"),
@@ -51,12 +56,14 @@ class ListScreen(Screen):
 				),
 				Rule.vertical(),
 				VerticalScroll(
+					Label("person name", id="person-name-label"),
 					XxxvStatic("上爻", classes="xxxv-static"),
 					XxxvStatic("五爻", classes="xxxv-static"),
 					XxxvStatic("四爻", classes="xxxv-static"),
 					XxxvStatic("三爻", classes="xxxv-static"),
 					XxxvStatic("二爻", classes="xxxv-static"),
 					XxxvStatic("初爻", classes="xxxv-static"),
+					Button("发布", variant="primary", classes="publish-to-map"),
 					classes="right-panel"
 				)
 			)
