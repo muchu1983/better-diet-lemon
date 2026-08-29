@@ -1,7 +1,7 @@
 from textual import events
-from textual.app import App, ComposeResult
+from textual.app import ComposeResult
 from textual.screen import Screen
-from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
+from textual.containers import Horizontal, Vertical, VerticalScroll, HorizontalScroll
 from textual.widgets import Header, Footer, Static, Label, Button, Input, Rule, Switch
 from textual.reactive import reactive
 from lemon64.tui.messages import PersonStaticClicked
@@ -67,7 +67,7 @@ class ListScreen(Screen):
 					classes="right-panel"
 				)
 			)
-			
+
 	def on_person_static_clicked(self, msg: PersonStaticClicked):
 		persno_name_label = self.query_one("#person-name-label", Label)
 		persno_name_label.update(msg.person_name)

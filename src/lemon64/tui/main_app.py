@@ -1,8 +1,4 @@
-from textual.app import App, ComposeResult
-from textual.screen import Screen
-from textual.containers import Horizontal, Vertical, HorizontalGroup, VerticalGroup, VerticalScroll, HorizontalScroll
-from textual.widgets import Header, Footer, Static, Label, Button, Input
-from textual.reactive import reactive
+from textual.app import App
 from lemon64.tui.list_screen import ListScreen
 from lemon64.tui.map_screen import MapScreen
 
