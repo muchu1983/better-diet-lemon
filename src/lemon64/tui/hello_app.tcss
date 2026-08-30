@@ -1,9 +1,0 @@
-Screen{
-	align: center middle;
-	background: blue;
-	color: red;
-}
-
-#name{
-	width: 50%;
-}

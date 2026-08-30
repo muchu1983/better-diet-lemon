@@ -1,5 +1,4 @@
 from textual.app import App
-from textual.widgets import Header, Footer, Static, Label, Button, Input, Rule, Switch
 from lemon64.tui.list_screen import ListScreen
 from lemon64.tui.map_screen import MapScreen
 
