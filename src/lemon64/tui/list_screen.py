@@ -25,8 +25,8 @@ class XxxvStatic(Static):
 
 	def compose(self) -> ComposeResult:
 		with Horizontal():
-			yield Label("阳爻", classes="bdem-xxxv-text")
 			yield Label("-", classes="bdem-xxxv-symbol")
+			yield Label("阳爻", classes="bdem-xxxv-text")
 			with Vertical(classes="xxxv-switch-panel"):
 				yield Label(self.xxxv_name, classes="xxxv-switch-label")
 				yield Switch(classes="xxxv-switch")
@@ -77,7 +77,6 @@ class ListScreen(Screen):
 			)
 
 	def on_person_static_clicked(self, msg: PersonStaticClicked):
-		self.get_app_controller().call_notify(self.app, f"mvc_c update {msg.person_name} start")
 		persno_name_label = self.screen.query_one("#person-name-label", Label)
 		persno_name_label.update(msg.person_name)
-		self.get_app_controller().call_notify(self.app, f"mvc_c update {msg.person_name} end")
+		self.get_app_controller().call_notify(self.app, f"mvc_c loads {msg.person_name}")

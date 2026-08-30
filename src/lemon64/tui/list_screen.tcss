@@ -62,21 +62,25 @@ XxxvStatic.xxxv-static{
 
 Label.bdem-xxxv-text{
 	width: 1fr;
+	height: 1fr;
 	background: orange;
 }
 
 Label.bdem-xxxv-symbol{
 	width: 1fr;
+	height: 1fr;
 	background: gold;
 }
 
 Label.bayt-xxxv-text{
 	width: 1fr;
+	height: 1fr;
 	background: orange;
 }
 
 Label.bayt-xxxv-symbol{
 	width: 1fr;
+	height: 1fr;
 	background: gold;
 }
 
