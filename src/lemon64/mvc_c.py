@@ -4,4 +4,6 @@ class Controller:
 		pass
 
 	def call_notify(self, app, text):
+		#演示 controller 修改资料 model
+		#更新画面并非 controller工作
 		app.notify(f"{text}")
