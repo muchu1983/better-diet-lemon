@@ -48,6 +48,7 @@ Button.publish-to-map{
 Label#person-name-label{
 	background: lightsalmon;
 	width: 90%;
+	height: 3;
 }
 
 XxxvStatic.xxxv-static{
@@ -93,6 +94,10 @@ Switch.xxxv-switch{
 	padding: 0;
 	margin: 0;
 	border: none;
-	height: 1;
-	width: 5;
+	width: 1fr;
+}
+
+Switch.xxxv-switch > .switch--slider{
+	color: green;
+    background: darkgrey;
 }

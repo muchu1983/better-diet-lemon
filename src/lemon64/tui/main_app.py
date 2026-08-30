@@ -1,6 +1,8 @@
 from textual.app import App
+from textual.widgets import Label
 from lemon64.tui.list_screen import ListScreen
 from lemon64.tui.map_screen import MapScreen
+from lemon64.tui.list_screen import PersonStatic
 
 class MainApp(App):
 
@@ -16,3 +18,4 @@ class MainApp(App):
 
 	def on_mount(self):
 		self.switch_mode("list")
+		

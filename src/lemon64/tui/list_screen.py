@@ -41,6 +41,11 @@ class ListScreen(Screen):
 	def get_app_controller(self):
 		return self.app.controller
 
+	def _on_mount(self):
+		myself_name_static = self.query_one("#myself", PersonStatic)
+		persno_name_label = self.query_one("#person-name-label", Label)
+		persno_name_label.update(myself_name_static.person_name)
+
 	def compose(self) -> ComposeResult:
 		self.add_class("list-screen")
 		yield Header()
@@ -66,7 +71,7 @@ class ListScreen(Screen):
 					XxxvStatic("三爻", classes="xxxv-static"),
 					XxxvStatic("二爻", classes="xxxv-static"),
 					XxxvStatic("初爻", classes="xxxv-static"),
-					Button("发布", variant="primary", classes="publish-to-map"),
+					Button("发布到地图", variant="primary", classes="publish-to-map"),
 					classes="right-panel"
 				)
 			)
