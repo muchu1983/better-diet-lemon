@@ -5,8 +5,8 @@ import shutil
 
 @task
 def build_win(ctx):
-    # 打包exe
-    ctx.run("pyinstaller --onefile src/lemon64/main.py")
+    # 打包windows exe
+    ctx.run("pyinstaller --onefile src/lemon64/main.py --add-data src/lemon64/tui/*.tcss;./lemon64/tui/")
     # 複製exe到根目錄下
     exe_source_file = "./dist/main.exe"
     exe_target_file = "./lemon64.exe"
@@ -20,8 +20,8 @@ def build_win(ctx):
 
 @task
 def build_linux(ctx):
-    # 打包exe
-    ctx.run("pyinstaller --onefile src/lemon64/main.py --add-data src/lemon64/tui/*.tcss:src/lemon64/tui/")
+    # 打包linux bin
+    ctx.run("pyinstaller --onefile src/lemon64/main.py --add-data src/lemon64/tui/*.tcss:./lemon64/tui/")
     # 複製bin到根目錄下
     bin_source_file = "./dist/main"
     bin_target_file = "./lemon64.bin"
