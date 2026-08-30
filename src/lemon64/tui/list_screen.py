@@ -17,7 +17,6 @@ class PersonStatic(Static):
 
 	def on_click(self, event:events.Click):
 		self.post_message(PersonStaticClicked(self.person_name))
-		self.notify(f"{self.person_name} on click")
 
 class XxxvStatic(Static):
 	def __init__(self, text:str, **kwargs):
@@ -38,6 +37,10 @@ class ListScreen(Screen):
 	TITLE = "lemon64"
 	SUB_TITLE = "list"
 	CSS_PATH = "list_screen.tcss"
+
+	def get_app_controller(self):
+		return self.app.controller
+
 	def compose(self) -> ComposeResult:
 		self.add_class("list-screen")
 		yield Header()
@@ -69,5 +72,7 @@ class ListScreen(Screen):
 			)
 
 	def on_person_static_clicked(self, msg: PersonStaticClicked):
-		persno_name_label = self.query_one("#person-name-label", Label)
+		self.get_app_controller().call_notify(self, f"mvc_c update {msg.person_name} start")
+		persno_name_label = self.screen.query_one("#person-name-label", Label)
 		persno_name_label.update(msg.person_name)
+		self.get_app_controller().call_notify(self, f"mvc_c update {msg.person_name} end")
