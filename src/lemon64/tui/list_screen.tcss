@@ -48,7 +48,8 @@ Button.publish-to-map{
 Label#person-name-label{
 	background: lightsalmon;
 	width: 90%;
-	height: 3;
+	height: 2;
+	text-style: italic bold;
 }
 
 XxxvStatic.xxxv-static{

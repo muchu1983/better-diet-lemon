@@ -41,11 +41,11 @@ class ListScreen(Screen):
 	def get_app_controller(self):
 		return self.app.controller
 
-	def _on_mount(self):
+	def on_mount(self):
 		myself_name_static = self.query_one("#myself", PersonStatic)
 		persno_name_label = self.query_one("#person-name-label", Label)
 		persno_name_label.update(myself_name_static.person_name)
-
+		
 	def compose(self) -> ComposeResult:
 		self.add_class("list-screen")
 		yield Header()
@@ -77,7 +77,7 @@ class ListScreen(Screen):
 			)
 
 	def on_person_static_clicked(self, msg: PersonStaticClicked):
-		self.get_app_controller().call_notify(self, f"mvc_c update {msg.person_name} start")
+		self.get_app_controller().call_notify(self.app, f"mvc_c update {msg.person_name} start")
 		persno_name_label = self.screen.query_one("#person-name-label", Label)
 		persno_name_label.update(msg.person_name)
-		self.get_app_controller().call_notify(self, f"mvc_c update {msg.person_name} end")
+		self.get_app_controller().call_notify(self.app, f"mvc_c update {msg.person_name} end")
