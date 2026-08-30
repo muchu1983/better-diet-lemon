@@ -1,6 +1,6 @@
-from lemon64.core import Xxxv, Yyp
-from lemon64.onpm import OctaNopoPentaMiri
-from lemon64.const import XxxvCode
+from lemon64.core.core import Xxxv, Yyp
+from lemon64.core.onpm import OctaNopoPentaMiri
+from lemon64.core.const import XxxvCode
 
 class Lemon:
     """柠檬"""

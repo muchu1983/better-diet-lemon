@@ -1,4 +1,4 @@
-from lemon64.run_tui import run_tui
+from lemon64.tui.run_tui import run_tui
 
 def main():
     run_tui()

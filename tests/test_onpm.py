@@ -1,7 +1,7 @@
 import unittest
-from lemon64.const import XxxvCode, OctaNopoCode
-from lemon64.core import Xxxv
-from lemon64.lemon import Lemon
+from lemon64.core.const import XxxvCode, OctaNopoCode
+from lemon64.core.core import Xxxv
+from lemon64.core.lemon import Lemon
 
 class TestOnpm(unittest.TestCase):
 

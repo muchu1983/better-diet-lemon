@@ -2,8 +2,8 @@ import sys
 import random
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Qt, Slot, Signal
-from lemon64.lemon import Lemon
-from lemon64.const import XxxvCode, YypCodeMap, EmojiMap
+from lemon64.core.lemon import Lemon
+from lemon64.core.const import XxxvCode, YypCodeMap, EmojiMap
 
 class LemonWidget(QtWidgets.QWidget):
     singalToNextLemonWidget = Signal()

@@ -1,6 +1,6 @@
 import unittest
 import random
-from lemon64.const import YypCode, YypCodeMap, EmojiMap
+from lemon64.core.const import YypCode, YypCodeMap, EmojiMap
 
 class TestConst(unittest.TestCase):
 

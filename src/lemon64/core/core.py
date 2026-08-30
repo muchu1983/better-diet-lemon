@@ -1,4 +1,4 @@
-from lemon64.const import XxxvCode
+from lemon64.core.const import XxxvCode
 """核心类"""
 class Xxxv:
     """爻：万物分阴阳"""

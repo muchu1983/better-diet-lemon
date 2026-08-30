@@ -1,5 +1,5 @@
 import unittest
-from lemon64.core import Xxxv
+from lemon64.core.core import Xxxv
 from lemon64.xxxv_generator.time_driven import TimeDrivenXxxvGen
 
 class TestTimeDrivenXxxvGen(unittest.TestCase):

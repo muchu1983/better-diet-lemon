@@ -1,5 +1,5 @@
-from lemon64.core import Xxxv
-from lemon64.const import (
+from lemon64.core.core import Xxxv
+from lemon64.core.const import (
     XxxvCode,
     YypCode,
     OctaNopoCode,
